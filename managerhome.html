@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Manager home</title>
+</head>
+<body align="center" bgcolor="AliceBlue">
+
+<h1>Manager Home</h1>
+<center>
+<h2>
+    <a th:href="@{/manager/myprofile/{id}(id=${manager.id})}">Profile</a>
+    <a th:href="@{/manager/myleaves/{id}(id=${manager.id})}">Requested Leaves</a>
+    <a th:href="@{/}">Logout</a>
+</h2>
+</center>
+</body>
+</html>

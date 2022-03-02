@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Register</title>
+    <!-- CSS only -->
+</head>
+<body align="center" bgcolor="AliceBlue">
+<center>
+  <h1>Employee Register Page</h1>
+    <br>
+    <h2>create your account</h2>
+    <br>
+    <form th:action="@{/employee/save}" method="post" th:object="${employee}" >
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" id="firstName" aria-describedby="emailHelp" placeholder="Enter FirstName" th:field ="*{firstName}">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" id="lastName" aria-describedby="emailHelp" placeholder="Enter LastName" th:field ="*{lastName}">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" th:field ="*{email}">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password" th:field ="*{password}">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="mobile">Mobile</label>
+            <input type="text" class="form-control" id="mobileNumber"
+					placeholder="mobile" th:field="*{mobileNumber}">
+			</div>
+			<br>
+        <div class="form-group">
+            <label for="nationality">Nationality</label>
+            <input type="text" class="form-control" id="nationality" aria-describedby="emailHelp" placeholder="Enter Nationality" th:field ="*{nationality}">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" aria-describedby="emailHelp" placeholder="Enter Address" th:field ="*{address}">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</center>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>My Leaves</title>
+</head>
+<body align="center" bgcolor="AliceBlue">
+<center>
+<h1>My Leave Status</h1>
+  <table border = '1'>
+    <thead>
+    <tr>
+    <td>Name</td>
+      <td>Date</td>
+      <td>Department</td>
+      <td>Status</td>
+    </tr>
+    <tr th:each="leave: ${leave}">
+      <td th:text="${leave.employeeName}"></td>
+      <td th:text="${leave.date}"></td>
+      <td th:text="${leave.department}"></td>
+      <td th:text="${leave.status}"></td>
+    </tr>
+  </table>
+</center></br></br>
+  <a th:href="@{/}">Logout</a>
+</body>
+</html>

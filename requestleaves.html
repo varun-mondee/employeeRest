@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Request Leaves</title>
+</head>
+<body align="center" bgcolor="AliceBlue">
+<h1>Leave Request Page</h1>
+<center>
+<h2>
+  <a th:href="@{/employee/myprofile/{id}(id=${employee.id})}">Profile</a>
+  <a th:href="@{/employee/{id}/leave(id=${employee.id})}">Book Appointment</a>
+  <a th:href="@{/leave/{id}/myleaves(id=${employee.id})}">My Appointments</a>
+  <a th:href="@{/}">Logout</a></h2>
+ <br>
+  <h2>Book Appointment</h2>
+  <form th:action="@{/employee/{id}/leave/save(id=${id})}" method="post" th:object="${leave}" >
+    <div class="form-group">
+      <label for="employeeName">Patient Name</label>
+      <input type="text" class="form-control" id="employeeName"  placeholder="Enter Employee Name" th:field ="*{employeeName}">
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="number">Mobile Number</label>
+      <input type="number" class="form-control" id="number"  placeholder="Enter Mobile Number" th:field ="*{mobileNumber}">
+    </div><br>
+    <div class="form-group">
+      <label for="department">Department</label>
+      <select id="department" th:field="*{department}">
+        <option th:value="IT" th:text="IT"></option>
+        <option th:value="HR" th:text="HR"></option>
+        <option th:value="dev" th:text="dev"></option>
+      </select>
+    </div><br>
+    <div class="form-group">
+      <label for="date">Date</label>
+      <input type="date" class="form-control" id="date" th:field ="*{date}">
+    </div><br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</center>
+</body>
+</html>

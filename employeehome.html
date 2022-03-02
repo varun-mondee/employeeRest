@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Home</title>
+</head>
+<body align="center" bgcolor="AliceBlue">
+<center>
+ <h1> Employee Home </h1>
+ <h1>
+<a th:href="@{/employee/myprofile/{id}(id=${employee.id})}">Profile</a>
+<a th:href="@{/employee/{id}/leave(id=${employee.id})}">Request Leave</a>
+<a th:href="@{/employee/{id}/myleaves(id=${employee.id})}">My Leaves</a>
+<a th:href="@{/}">Logout</a>
+</h1>
+</center>
+</body>
+</html>

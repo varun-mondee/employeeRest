@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Manager Registration </title>
+</head>
+<body align="center" bgcolor="AliceBlue">
+<h1>Welcome to Manager Registration</h1>
+<br>
+<form th:action="@{/manager/save}" method="post" th:object="${manager}" >
+    <div class="form-group">
+        <label for="firstName">FirstName</label>
+        <input type="text" class="form-control" id="firstName"  placeholder="Enter FirstName" th:field ="*{firstName}">
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="lastName">lastName</label>
+        <input type="text" class="form-control" id="lastName"  placeholder="Enter LastName" th:field ="*{lastName}">
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email"  placeholder="Enter email" th:field ="*{email}">
+
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Password" th:field ="*{password}">
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="department">Department</label>
+        <select id="department" th:field="*{department}">
+            <option th:value="IT" th:text="IT"></option>
+            <option th:value="HR" th:text="HR"></option>
+            <option th:value="dev" th:text="dev"></option>
+        </select>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</body>
+</html>
